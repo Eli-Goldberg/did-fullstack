@@ -1,9 +1,9 @@
-*.zip
-.vscode/
-.ipynb_checkpoints
-*_data
-to_zip
-old
-random_files.txt
+backend/*.zip
+backend/.vscode/
+backend/.ipynb_checkpoints
+backend/*_data
+backend/to_zip
+backend/old
+backend/random_files.txt
 **/.venv
 **/__pycache__
