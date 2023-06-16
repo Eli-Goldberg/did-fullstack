@@ -1,0 +1,24 @@
+
+.scroller {
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.inner {
+  width: max-content;
+  display: flex;
+  animation: scroll 15s linear infinite;
+}
+
+.scroll-image {
+  height: 800px;
+  width: 800px;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
