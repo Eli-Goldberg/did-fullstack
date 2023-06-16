@@ -9,7 +9,7 @@
 .inner {
   width: max-content;
   display: flex;
-  animation: scroll 60s linear infinite;
+  animation: scroll 240s linear infinite;
 }
 
 .image-container {
