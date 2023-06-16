@@ -9,7 +9,7 @@
 .inner {
   width: max-content;
   display: flex;
-  animation: scroll 15s linear infinite;
+  animation: scroll 60s linear infinite;
 }
 
 .image-container {
@@ -24,8 +24,15 @@
 }
 
 .scroll-image {
-  height: 100%;
-  width: 100%;
+  height: 800px;
+  width: 800px;
+}
+
+.id-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
 }
 
 .icons-container {
@@ -38,6 +45,24 @@
 .icon {
   color: red;
   margin-right: 5px;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Replace the below with your own spinner CSS or spinner component */
+  width: 60px;
+  height: 60px;
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes scroll {

@@ -1,31 +1,15 @@
-// import { BASE_BACKEND_URL } from "./config";
+/* eslint-disable no-unused-vars */
+import { backendUrl } from "./config";
 
-// const useFetchData = ("url") => {
-//   const [data, setData] = useState({ hits: [] });
-//   const [url, setUrl] = useState(
-//     'https://hn.algolia.com/api/v1/search?query=redux',
-//   );
-//   const [isLoading, setIsLoading] = useState(false);
-//   const [isError, setIsError] = useState(false);
+// Fetcher function
+export const getRandomImages = async ({ queryKey }) => {
+  const [_, count] = queryKey;
+  const res = await fetch(backendUrl(`api/v1/images/random/${count}`));
+  return res.json();
+};
 
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       setIsError(false);
-//       setIsLoading(true);
-
-//       try {
-//         const result = await axios(url);
-
-//         setData(result.data);
-//       } catch (error) {
-//         setIsError(true);
-//       }
-
-//       setIsLoading(false);
-//     };
-
-//     fetchData();
-//   }, [url]);
-
-//   return [{ data, isLoading, isError }, setUrl];
-// }
+export const getImagePrediction = async ({ queryKey }) => {
+  const [_, imageId] = queryKey;
+  const res = await fetch(backendUrl(`api/v1/images/predict/${imageId}`));
+  return res.json();
+};

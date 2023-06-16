@@ -19,6 +19,7 @@ const Icon = ({ type }) => {
     case "pliers":
       return <GiPincers style={style} />;
     default:
+      
       return null;
   }
 };
