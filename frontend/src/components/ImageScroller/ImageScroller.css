@@ -1,7 +1,6 @@
-
 .scroller {
   width: 100%;
-  height: 800px;
+  height: auto;
   overflow: hidden;
   white-space: nowrap;
   position: relative;
@@ -13,9 +12,32 @@
   animation: scroll 15s linear infinite;
 }
 
-.scroll-image {
+.image-container {
+  position: relative;
   height: 800px;
   width: 800px;
+  border: none;
+}
+
+.image-container.active {
+  border: 2px solid red;
+}
+
+.scroll-image {
+  height: 100%;
+  width: 100%;
+}
+
+.icons-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+}
+
+.icon {
+  color: red;
+  margin-right: 5px;
 }
 
 @keyframes scroll {
