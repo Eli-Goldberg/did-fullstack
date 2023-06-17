@@ -36,10 +36,6 @@ def get_model(model_type: str = ""):
     model.add(tf.keras.layers.Dense(512, activation='relu'))
     model.add(tf.keras.layers.Dropout(0.5))
     model.add(tf.keras.layers.Dense(1, activation='sigmoid'))
-
-    model.compile(loss='binary_crossentropy',
-              optimizer=Adam(learning_rate=0.001),
-              metrics=['accuracy'])
     
     load_weights(model, model_type)
     

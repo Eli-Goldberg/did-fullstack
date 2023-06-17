@@ -34,13 +34,15 @@ def predict_image(models: dict[str, tf.keras.models.Sequential], image_id: str =
         
         # image_location = os.path.join(IMAGE_PATH, image_id)
         image_location = f'{s3_url}/{image_id}.jpg'
-        res = request.urlopen(image_location).read()
-        img = Image.open(BytesIO(res)).resize((IMAGE_WIDTH, IMAGE_HEIGHT))
+
+
+        test = BytesIO(request.urlopen(image_location).read())
+        test = load_img(test, target_size=(300, 300))
 
         # img_path = get_file(origin = image_location)
 
         # img = load_img(image_location, target_size=(IMAGE_WIDTH, IMAGE_HEIGHT))
-        img_data = np.expand_dims(img, axis=0)
+        img_data = np.expand_dims(test, axis=0)
 
         prediction = dict()
 
