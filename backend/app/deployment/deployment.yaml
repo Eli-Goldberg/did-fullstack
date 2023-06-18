@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: did-backend
+spec:
+  selector:
+    matchLabels:
+      app: did-backend
+  template:
+    metadata:
+      labels:
+        app: did-backend
+    spec:
+      containers:
+        - name: did-backend
+          image: slygon/did-backend:latest
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 8000
