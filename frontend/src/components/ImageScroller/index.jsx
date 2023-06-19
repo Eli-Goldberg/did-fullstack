@@ -30,7 +30,7 @@ const Image = ({ imageId }) => {
       console.error(`Image ${imageId} error: ${error}`);
     }
     if (data && data.ok === false) {
-      console.error(`Image ${imageId} is no ok`);
+      console.error(`Image ${imageId} is not ok`);
     }
 
     if (data?.prediction) {
@@ -47,7 +47,7 @@ const Image = ({ imageId }) => {
 
   return (
     <div className={`image-container ${isSus ? "active" : ""}`}>
-      <img src={buildImgUrl(imageId)} alt={imageId} className="scroll-image" />
+      <img src={buildImgUrl(imageId)} alt="" className="scroll-image" />
       {isLoading && <div className="spinner" />}
       <div className="icons-container">
         {gunPos && <Icon type="gun" className="icon" />}

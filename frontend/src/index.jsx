@@ -1,29 +1,38 @@
 import React from "react";
 import "./index.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
 import reportWebVitals from "./reportWebVitals";
 import ScrollerPage from "./components/ScrollerPage/Index";
+import AppBarComponent from "./components/AppBar";
 
 const queryClient = new QueryClient();
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <ScrollerPage />,
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "##90caf9",
+    },
+    secondary: {
+      main: "#90caf9",
+    },
   },
-  {
-    path: "about",
-    element: <div>About</div>,
-  },
-]);
-
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} />
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <AppBarComponent />
+          <Routes>
+            <Route path="/" Component={ScrollerPage} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </QueryClientProvider>
   </React.StrictMode>
 );

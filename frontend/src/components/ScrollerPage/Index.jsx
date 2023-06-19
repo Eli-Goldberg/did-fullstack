@@ -19,6 +19,23 @@ import ImageScroller from "../ImageScroller";
 //   ],
 // };
 
+const Center = ({ children }) => (
+  <div
+    style={{
+      position: "absolute",
+      margin: "auto",
+      top: "0",
+      right: "0",
+      bottom: "0",
+      left: "0",
+      width: "200px",
+      height: "200px",
+    }}
+  >
+    {children}
+  </div>
+);
+
 function ScrollerPage() {
   // Using the hook
   const { data, error, isLoading } = useQuery(
@@ -26,8 +43,8 @@ function ScrollerPage() {
     getRandomImages
   );
   // Error and Loading states
-  if (error) return <div>Request Failed</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (error) return <Center>Request Failed</Center>;
+  if (isLoading) return <Center>Loading...</Center>;
   return (
     <div className="App">
       <header className="App-header">

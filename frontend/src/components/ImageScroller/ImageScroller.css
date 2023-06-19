@@ -14,18 +14,18 @@
 
 .image-container {
   position: relative;
-  height: 800px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
   border: none;
 }
 
 .image-container.active {
-  border: 2px solid red;
+  /* border: 2px solid red; */
 }
 
 .scroll-image {
-  height: 800px;
-  width: 800px;
+  height: 600px;
+  width: 600px;
 }
 
 .id-container {
