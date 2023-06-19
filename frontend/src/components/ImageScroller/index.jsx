@@ -47,8 +47,7 @@ const Image = ({ imageId }) => {
 
   return (
     <div className={`image-container ${isSus ? "active" : ""}`}>
-      <div className="id-container">{imageId}</div>
-      <img src={buildImgUrl(imageId)} alt="" className="scroll-image" />
+      <img src={buildImgUrl(imageId)} alt={imageId} className="scroll-image" />
       {isLoading && <div className="spinner" />}
       <div className="icons-container">
         {gunPos && <Icon type="gun" className="icon" />}

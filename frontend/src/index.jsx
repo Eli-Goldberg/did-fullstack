@@ -1,17 +1,29 @@
 import React from "react";
+import "./index.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import { QueryClient, QueryClientProvider } from "react-query";
-import "./index.css";
-import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import ScrollerPage from "./components/ScrollerPage/Index";
 
 const queryClient = new QueryClient();
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <ScrollerPage />,
+  },
+  {
+    path: "about",
+    element: <div>About</div>,
+  },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   </React.StrictMode>
 );

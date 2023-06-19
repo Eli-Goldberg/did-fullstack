@@ -1,8 +1,8 @@
 import React from "react";
 import { useQuery } from "react-query";
-import "./App.css";
-import { getRandomImages } from "./backend";
-import ImageScroller from "./components/ImageScroller";
+import "./Scroller.css";
+import { getRandomImages } from "../../backend";
+import ImageScroller from "../ImageScroller";
 
 // const data = {
 //   message: [
@@ -19,7 +19,7 @@ import ImageScroller from "./components/ImageScroller";
 //   ],
 // };
 
-function App() {
+function ScrollerPage() {
   // Using the hook
   const { data, error, isLoading } = useQuery(
     ["randomImages", 10],
@@ -40,4 +40,4 @@ function App() {
   );
 }
 
-export default App;
+export default ScrollerPage;
