@@ -1,14 +1,5 @@
 import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Menu,
-  MenuItem,
-  Select,
-} from "@mui/material";
-import { MoreVert as MoreIcon } from "@mui/icons-material";
+import { AppBar, Toolbar, Typography, MenuItem, Select } from "@mui/material";
 import { Link } from "react-router-dom";
 
 const AppBarComponent = () => (

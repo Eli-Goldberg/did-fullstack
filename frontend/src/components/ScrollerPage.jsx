@@ -1,8 +1,9 @@
 import React from "react";
 import { useQuery } from "react-query";
 import "./Scroller.css";
-import { getRandomImages } from "../../backend";
-import ImageScroller from "../ImageScroller";
+import { getRandomImages } from "../backend";
+import ImageScroller from "./ImageScroller";
+import Center from "./Center";
 
 // const data = {
 //   message: [
@@ -18,23 +19,6 @@ import ImageScroller from "../ImageScroller";
 //     "P05988",
 //   ],
 // };
-
-const Center = ({ children }) => (
-  <div
-    style={{
-      position: "absolute",
-      margin: "auto",
-      top: "0",
-      right: "0",
-      bottom: "0",
-      left: "0",
-      width: "200px",
-      height: "200px",
-    }}
-  >
-    {children}
-  </div>
-);
 
 function ScrollerPage() {
   // Using the hook

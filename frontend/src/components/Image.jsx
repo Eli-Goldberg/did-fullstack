@@ -1,13 +1,10 @@
-/* eslint-disable consistent-return */
 /* eslint-disable no-console */
 /* eslint-disable eqeqeq */
-/* eslint-disable react/no-array-index-key */
 import React, { useEffect, useState } from "react";
-import "./ImageScroller.css";
 import { useQuery } from "react-query";
-import { buildImgUrl } from "../../config";
-import Icon from "../Icon";
-import { getImagePrediction } from "../../backend";
+import { buildImgUrl } from "../config";
+import Icon from "./Icon";
+import { getImagePrediction } from "../backend";
 
 // const checkedImageIds = new Set();
 const isPositive = (val) => val == "1.0";
@@ -47,7 +44,9 @@ const Image = ({ imageId }) => {
 
   return (
     <div className={`image-container ${isSus ? "active" : ""}`}>
-      <img src={buildImgUrl(imageId)} alt="" className="scroll-image" />
+      <a href={`/view/${imageId}`}>
+        <img src={buildImgUrl(imageId)} alt="" className="scroll-image" />
+      </a>
       {isLoading && <div className="spinner" />}
       <div className="icons-container">
         {gunPos && <Icon type="gun" className="icon" />}
@@ -60,18 +59,4 @@ const Image = ({ imageId }) => {
   );
 };
 
-const ImageScroller = ({ imageIds }) => {
-  const newImageIds = imageIds.concat(imageIds);
-
-  return (
-    <div id="scroller" className="scroller">
-      <div className="inner">
-        {newImageIds.map((imageId, index) => (
-          <Image key={`${imageId}-${index}`} imageId={imageId} />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default ImageScroller;
+export default Image;

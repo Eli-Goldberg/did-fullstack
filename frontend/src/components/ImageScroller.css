@@ -19,9 +19,9 @@
   border: none;
 }
 
-.image-container.active {
-  /* border: 2px solid red; */
-}
+/* .image-container.active {
+  border: 2px solid red;
+} */
 
 .scroll-image {
   height: 600px;

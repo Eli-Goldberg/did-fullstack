@@ -6,8 +6,9 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import { ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
 import reportWebVitals from "./reportWebVitals";
-import ScrollerPage from "./components/ScrollerPage/Index";
+import ScrollerPage from "./components/ScrollerPage";
 import AppBarComponent from "./components/AppBar";
+import ViewImage from "./components/ViewImage";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +31,7 @@ root.render(
           <AppBarComponent />
           <Routes>
             <Route path="/" Component={ScrollerPage} />
+            <Route path="/view/:imageId" Component={ViewImage} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
