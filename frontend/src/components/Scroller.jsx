@@ -1,6 +1,6 @@
 import React from "react";
-import "./ImageScroller.css";
-import Image from "./Image";
+import "./Scroller.css";
+import ScrolledImage from "./ScrolledImage";
 
 const ImageScroller = ({ imageIds }) => {
   const newImageIds = imageIds.concat(imageIds);
@@ -10,7 +10,7 @@ const ImageScroller = ({ imageIds }) => {
       <div className="inner">
         {newImageIds.map((imageId, index) => (
           // eslint-disable-next-line react/no-array-index-key
-          <Image key={`${imageId}-${index}`} imageId={imageId} />
+          <ScrolledImage key={`${imageId}-${index}`} imageId={imageId} />
         ))}
       </div>
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import { useQuery } from "react-query";
-import "./Scroller.css";
+import "./ScrollerPage.css";
 import { getRandomImages } from "../backend";
-import ImageScroller from "./ImageScroller";
+import ImageScroller from "./Scroller";
 import Center from "./Center";
 
 // const data = {
