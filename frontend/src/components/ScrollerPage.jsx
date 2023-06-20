@@ -33,7 +33,7 @@ function ScrollerPage() {
     <div className="App">
       <header className="App-header">
         {/* <Image id={"P08722"} /> */}
-        <ImageScroller imageIds={data?.message} />
+        <ImageScroller imageIds={data?.imageIds} />
         {/* <Images /> */}
         {/* <p>Scanning...</p> */}
       </header>

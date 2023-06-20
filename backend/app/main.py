@@ -34,7 +34,5 @@ app.include_router(api_router, prefix="/api/v1")
 # async def get_net_image_prediction(image_id: str = ""):
 #     return predict_image(models, image_id)
     
-    
-# if __name__ == "__main__":
-# 	port = int(os.environ.get('PORT', 5000))
-# 	run(app, host="0.0.0.0", port=port)
+if __name__ == "__main__":
+    run(app, host="0.0.0.0", port=8000)

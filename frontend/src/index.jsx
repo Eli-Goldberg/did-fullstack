@@ -9,6 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 import ScrollerPage from "./components/ScrollerPage";
 import AppBarComponent from "./components/AppBar";
 import ViewImage from "./components/ViewImage";
+import UploadPage from "./components/Upload";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +33,7 @@ root.render(
           <Routes>
             <Route path="/" Component={ScrollerPage} />
             <Route path="/view/:imageId" Component={ViewImage} />
+            <Route path="/upload" Component={UploadPage} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

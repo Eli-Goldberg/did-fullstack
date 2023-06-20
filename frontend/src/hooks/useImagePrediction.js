@@ -6,6 +6,22 @@ import { getImagePrediction } from "../backend";
 // eslint-disable-next-line eqeqeq
 const isPositive = (val) => val == "1.0";
 
+export const transformPredictionResult = (result) => {
+  const { gun, knife, scissors, pliers, wrench } = result.prediction;
+  const allPos = [gun, knife, scissors, pliers, wrench].map(isPositive);
+  const [gunPos, knifePos, scisPos, pliPos, wrePos] = allPos;
+
+  const isSus = allPos.some((i) => i);
+  return {
+    gunPos,
+    knifePos,
+    scisPos,
+    pliPos,
+    wrePos,
+    isSus,
+  };
+};
+
 export default function useImagePrediction(imageId) {
   const [state, setState] = useState({
     isLoading: true,
@@ -30,20 +46,11 @@ export default function useImagePrediction(imageId) {
     }
 
     if (data?.prediction) {
-      const { gun, knife, scissors, pliers, wrench } = data.prediction;
-      const allPos = [gun, knife, scissors, pliers, wrench].map(isPositive);
-      const [gunPos, knifePos, scisPos, pliPos, wrePos] = allPos;
-
-      const isSus = allPos.some((i) => i);
+      const formatted = transformPredictionResult(data);
       setState({
         isLoading,
         error,
-        isSus,
-        gunPos,
-        scisPos,
-        pliPos,
-        wrePos,
-        knifePos,
+        ...formatted,
       });
     }
   }, [data, error, isLoading]);

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Center = ({ children }) => (
+const Center = ({ children, style }) => (
   <div
     style={{
       position: "absolute",
@@ -11,6 +11,7 @@ const Center = ({ children }) => (
       left: "0",
       width: "200px",
       height: "200px",
+      ...style,
     }}
   >
     {children}

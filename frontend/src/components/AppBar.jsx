@@ -30,7 +30,7 @@ const AppBarComponent = () => (
         <MenuItem key="scissors" value="scissors" component={Link} to="/">
           Scissors
         </MenuItem>
-        <MenuItem key="upload" value="upload" component={Link} to="/">
+        <MenuItem key="upload" value="upload" component={Link} to="/upload">
           Upload Image
         </MenuItem>
       </Select>
