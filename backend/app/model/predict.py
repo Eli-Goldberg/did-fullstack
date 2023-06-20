@@ -20,12 +20,19 @@ IMAGE_PATH = "/home/eli/dev/school/data-science/did/dataset/JPEGImage"
 s3_url = "https://eli-did-assets.s3.amazonaws.com/dataset/JPEGImage"
 
 def get_random(n: int):
+    if n > len(all_images):
+        return all_images
+    
     random_choice = random.sample(all_images, n)
     return random_choice 
 
 def get_random_by_category(category: str, n: int):
     if category not in images:
         raise Exception("Category does not exist")
+    
+    cat = images[category]
+    if n > len(cat):
+      return cat
     
     random_choice = random.sample(images[category], n)
     return random_choice 
