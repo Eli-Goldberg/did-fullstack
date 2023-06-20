@@ -12,7 +12,7 @@ TYPE_KNIFE = 'knife'
 TYPE_PLIERS = 'pliers'
 TYPE_SCISSORS = 'scissors'
 TYPE_WRENCH = 'wrench'
-TYPE_NONE = 'none'
+TYPE_NONE = 'safe'
 
 def get_model(model_type: str = ""):
     model = tf.keras.models.Sequential()

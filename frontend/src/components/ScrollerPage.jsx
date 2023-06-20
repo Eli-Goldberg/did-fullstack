@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
 import "./ScrollerPage.css";
 import { getRandomImages } from "../backend";
 import ImageScroller from "./Scroller";
@@ -21,9 +22,11 @@ import Center from "./Center";
 // };
 
 function ScrollerPage() {
+  const { category } = useParams();
+
   // Using the hook
   const { data, error, isLoading } = useQuery(
-    ["randomImages", 10],
+    ["randomImages", 10, category],
     getRandomImages
   );
   // Error and Loading states

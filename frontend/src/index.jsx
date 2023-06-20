@@ -34,6 +34,7 @@ root.render(
             <Route path="/" Component={ScrollerPage} />
             <Route path="/view/:imageId" Component={ViewImage} />
             <Route path="/upload" Component={UploadPage} />
+            <Route path="/categories/:category" Component={ScrollerPage} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
